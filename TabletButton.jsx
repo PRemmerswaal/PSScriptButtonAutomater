@@ -28,7 +28,7 @@ var ref = new ActionReference();
 
  
 var selectedFile = app.openDialog();
-//opens dialog to select file
+//opens dialog to select file, this file needs to be transparant
 
 desc11.putPath( idnull, new File(selectedFile) );
 var idFTcs = charIDToTypeID( "FTcs" ); 
@@ -53,10 +53,6 @@ var iconLayerName = docRef.activeLayer.name;
 var artLayerRef = docRef.artLayers.add()
 artLayerRef.kind = LayerKind.TEXT
 
-//textLayerRef.name = "my text"
-
-
-
 // Set the contents of the text layer.
 var textItemRef = artLayerRef.textItem
 var Start =prompt("btnLabel","","What is the Button Label");
@@ -64,13 +60,6 @@ var Start =prompt("btnLabel","","What is the Button Label");
 // set the output folder
 //textItemRef.contents = idnull;
 textItemRef.contents = Start;
-
-
-
-
-
-
-
 
 textItemRef.justification = Justification.CENTER
 var FillColor = new SolidColor;
@@ -92,6 +81,7 @@ function saveJPEG( doc, saveFile, qty ) {
   
     
 //We have 4 button types;
+//We might add 2 more later
 //Normal, Highlighted, Pressed, Disabled
 //*****CREATE NORMAL BUTTON****//
 //First we create the normal button
